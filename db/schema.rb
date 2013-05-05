@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505092601) do
+ActiveRecord::Schema.define(:version => 20130505094021) do
 
   create_table "people", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20130505092601) do
     t.hstore   "links"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "people", ["links"], :name => "index_people_on_links"
 
 end
