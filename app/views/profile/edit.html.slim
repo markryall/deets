@@ -6,6 +6,8 @@
       - messages.each do |msg|
         li style='margin-left:8px;' = msg
 
+h1 details
+
 = form_for @current_person, url: profile_url, html: {class: 'form-horizontal'} do |form|
   fieldset
     div.span8
@@ -23,3 +25,25 @@
           = form.text_field :lastfm, id: "lastfm"
       div.form-actions
         = form.submit 'Update Profile', class: 'btn btn-primary'
+
+h1 links
+
+div.span6
+  table class='table-striped'
+    - @current_person.links.each do |key, value|
+      tr
+        td
+          p = key
+        td
+          p = value
+        td
+          a href='#' class='delete-link' data-key="#{key}"
+            i.icon-remove-circle
+    tr
+      td
+        p #{text_field_tag :name, nil, placeholder: 'name'}
+      td
+        p #{text_field_tag :url, nil, placeholder: 'http://my.blog.com'}
+      td
+        a href='#' class='add-link'
+          i.icon-plus
