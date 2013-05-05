@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Deets
+    = stylesheet_link_tag '/bootstrap/css/bootstrap.min.css'
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body
+    div.container
+      = yield
+
+    = javascript_include_tag 'application'
+    = javascript_include_tag 'https://login.persona.org/include.js'

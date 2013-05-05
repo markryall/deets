@@ -1,4 +1,6 @@
 class DeetsController < ApplicationController
+  skip_filter :require_login
+
   def show
     deet = {
       name: 'unknown',
