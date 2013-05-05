@@ -1,6 +1,23 @@
 class DeetsController < ApplicationController
   def show
-    render json: {
+    deet = test
+    deet = me if params[:id] == '2a063c90388fce5fe65f6564287bb6a2'
+    render json: deet
+  end
+private
+  def test
+    {
+      name: 'Unknown',
+      email: 'test@test.com',
+      birth: 0,
+      links: {
+        twitter: 'http://twitter.com/test'
+      }
+    }
+  end
+
+  def me
+    {
       name: 'Mark Ryall',
       email: 'mark@ryall.name',
       birth: -25381800000,
