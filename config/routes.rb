@@ -4,5 +4,6 @@ Deets::Application.routes.draw do
   get 'oauth2callback' => 'home#google_oauth_callback'
   get 'profile' => 'profile#edit'
   put 'profile' => 'profile#update'
+  get 'logout' => 'home#logout', as: 'logout'
   root to: 'home#index'
 end

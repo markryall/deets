@@ -18,6 +18,11 @@ class HomeController < ApplicationController
     end
   end
 
+  def logout
+    session[:email] = nil
+    redirect_to root_url
+  end
+
   def persona_callback
     response = {}
     verify_persona { |email, response| session[:email] = email }
