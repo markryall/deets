@@ -1,0 +1,25 @@
+- if flash[:notice]
+    div.alert.alert-success =flash[:notice]
+- messages = @current_person.errors.full_messages
+- unless messages.empty?
+    ul.alert.alert-error
+      - messages.each do |msg|
+        li style='margin-left:8px;' = msg
+
+= form_for @current_person, url: profile_url, html: {class: 'form-horizontal'} do |form|
+  fieldset
+    div.span8
+      div.control-group
+        label.control-label for="person_name" name
+        div.controls
+          = form.text_field :name, id: "name"
+      div.control-group
+        label.control-label for="person_birth" birth
+        div.controls
+          = form.text_field :birth, id: "birth"
+      div.control-group
+        label.control-label for="person_lastfm" lastfm
+        div.controls
+          = form.text_field :lastfm, id: "lastfm"
+      div.form-actions
+        = form.submit 'Update Profile', class: 'btn btn-primary'
