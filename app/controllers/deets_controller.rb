@@ -4,7 +4,9 @@ class DeetsController < ApplicationController
     deet = me if params[:id] == '2a063c90388fce5fe65f6564287bb6a2'
     render json: deet
   end
+
 private
+
   def test
     {
       name: 'Unknown',
@@ -24,7 +26,7 @@ private
       links: {
         home: 'http://mark.ryall.name',
         skype: 'skype:mark_ryall',
-        phone: 'skype:+61414740489',
+        phone: 'tel:+61414740489',
         twitter: 'http://twitter.com/markryall',
         facebook: 'http://facebook.com/mark.ryall',
         github: 'http://github.com/markryall',

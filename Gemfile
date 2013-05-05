@@ -10,5 +10,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'rack-cors'
 gem 'rack-cors', require: 'rack/cors'
+gem 'slim'
+gem 'activerecord-postgres-hstore'
