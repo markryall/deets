@@ -30,14 +30,14 @@ h1 links
 
 div.span6
   table class='table-striped'
-    - @current_person.links.each do |key, value|
+    tbody data-bind="foreach: links"
       tr
         td
-          p = key
+          p data-bind="text: $data[0]"
         td
-          p = value
+          p data-bind="text: $data[1]"
         td
-          a href='#' class='delete-link' data-key="#{key}"
+          a href='#' class='delete-link'
             i.icon-remove-circle
     tr
       td
@@ -48,8 +48,9 @@ div.span6
         a href='#' class='add-link'
           i.icon-plus
 
-span data-bind="text: personName"
-
 - content_for :javascript_includes do
   javascript:
-      window.bind({personName: 'Bob', personAge: 123});
+      window.vm = {
+        links: #{@current_person.links.to_a.to_json.html_safe}
+      };
+      window.bind(window.vm);
