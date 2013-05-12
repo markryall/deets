@@ -50,5 +50,4 @@ div.span6
 
 - content_for :javascript_includes do
   javascript:
-      window.vm = new LinksViewModel(#{@current_person.links.to_a.to_json.html_safe});
-      window.bind(window.vm);
+      window.bind(#{@current_person.links.to_a.to_json.html_safe});
