@@ -41,9 +41,9 @@ div.span6
             i.icon-remove-circle
     tr
       td
-        p #{text_field_tag :name, nil, placeholder: 'name', "data-bind" => "value: new_key"}
+        p #{text_field_tag :name, nil, placeholder: 'name', "data-bind" => "value: new_key", id: 'new_key'}
       td
-        p #{text_field_tag :url, nil, placeholder: 'http://my.blog.com', "data-bind" => "value: new_url"}
+        p #{text_field_tag :url, nil, placeholder: 'http://my.blog.com', "data-bind" => "value: new_url, event: { keyup: keyup }"}
       td
         a href='#' class='add-link' data-bind="click: add"
           i.icon-plus
