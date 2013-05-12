@@ -47,3 +47,9 @@ div.span6
       td
         a href='#' class='add-link'
           i.icon-plus
+
+span data-bind="text: personName"
+
+- content_for :javascript_includes do
+  javascript:
+      window.bind({personName: 'Bob', personAge: 123});

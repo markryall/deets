@@ -1,5 +1,4 @@
-//= require jquery
-//= require jquery_ujs
+window.bind = (vm) -> ko.applyBindings vm
 
 $ ->
   $('#authenticate').click ->

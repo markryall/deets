@@ -9,7 +9,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 gem 'rack-cors', require: 'rack/cors'
 gem 'slim'
 gem 'activerecord-postgres-hstore'
