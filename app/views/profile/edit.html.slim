@@ -37,7 +37,7 @@ div.span6
         td
           p data-bind="text: $data[1]"
         td
-          a href='#' class='delete-link'
+          a href='#' class='delete-link' data-bind="click: window.destroy"
             i.icon-remove-circle
     tr
       td
@@ -51,6 +51,9 @@ div.span6
 - content_for :javascript_includes do
   javascript:
       window.vm = {
-        links: #{@current_person.links.to_a.to_json.html_safe}
+        links: ko.observableArray(#{@current_person.links.to_a.to_json.html_safe})
+      };
+      window.destroy = function(data) {
+          console.log(data);
       };
       window.bind(window.vm);
